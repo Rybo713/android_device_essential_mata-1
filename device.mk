@@ -23,6 +23,9 @@ PRODUCT_ENFORCE_RRO_TARGETS := \
 -include device/essential/mata/system_prop.mk
 -include device/essential/mata/vendor_prop.mk
 
+# GApps
+GAPPS_VARIANT := nano
+
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := 560dpi
@@ -406,6 +409,9 @@ PRODUCT_PACKAGES += \
     libicuuc.vendor \
     libstdc++.vendor \
     vndk_package
+
+# GApps
+$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
 
 # Wifi
 PRODUCT_COPY_FILES += \
